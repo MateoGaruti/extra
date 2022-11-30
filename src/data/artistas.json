@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nombre": "Charly",
+    "apellido": "Garcia",
+    "genero": "rock"
+  },
+  {
+    "id": 2,
+    "nombre": "Gustavo",
+    "apellido": "Cerati",
+    "genero": "rock"
+  },
+  {
+    "id": 3,
+    "nombre": "papo",
+    "apellido": "blues",
+    "genero": "metal"
+  },
+  {
+    "nombre": "Fito",
+    "apellido": "Paez",
+    "genero": "Rock",
+    "id": 4
+  },
+  {
+    "nombre": "Malena",
+    "apellido": "Villa",
+    "genero": "Rock",
+    "id": 5
+  },
+  {
+    "id": 6,
+    "nombre": "Marilina",
+    "apellido": "Bertoldi",
+    "genero": "rock"
+  }
+]
