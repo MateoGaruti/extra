@@ -7,20 +7,19 @@ const controller = {
         
         if (req.params.artistas){//si dentro de "req.params" exsiten los artistas. Me llaga como parameto un artista
             artistas = artistas.filter (e => e.artistas == req.params.artistas)
+            return res.render ("listado",{artistas}) //FUNCIONA BIEN
         }
         return res.render ("listado",{artistas}) //FUNCIONA BIEN
     },
         //INDEX FUNCIONA BIEN 
      
     show: (req, res) =>{
-        let artistas = one(req.params.artistas)
-        if (artistas){
+        let artista = one(req.params.artista)
+        if (artista){
+            return res.render ("detalle",{artista})
         }
-        return res.render ("detalle",{artistas:null})
-    },
-    
-
-
+          return res.render ("detalle",{artista:null})
+    },    
 
     
     create: (req,res) =>{

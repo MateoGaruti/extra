@@ -9,15 +9,13 @@
     <title>Document</title>
 </head>
 <body>
-    <% if (artistas) { %> 
+    <% if (artista) { %> 
             <article>
-                <h2><%= artistas.nombre %><span>apellido<%= artistas.apellido%></span></h2>
-                <nav>
-                    <a href="/artistas/<%= artistas.genero %>">
-                        <%= artistas.genero %>
-                    </a>
-                </nav>
+                <h2><%= artista.name %><span>nombre <%=artista.apellido%></span></h2>
             </article>
+            <nav>
+                <a href="artista <%=artista.genero%>"><%=artista.genero%></a>
+            </nav>
         <% } else { %>
          <h2>no hay artista seleccionado</h2>
 
