@@ -1,11 +1,16 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Artista';
+    let alias = 'Canciones';
     let cols = {
-        nombre: {
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        titulo: {
             type: dataTypes.STRING
         },
-        apellido: {
-            type: dataTypes.STRING
+        duracion: {
+            type: dataTypes.INTEGER
         }
     };
     let config = {

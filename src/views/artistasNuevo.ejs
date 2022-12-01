@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>argregar artistas</title>
+    
+</head>
+
+<body>
+    <h1 class="titulo">Agregar Artistas</h1>
+        <form action="/artistas/crear" method="POST">
+            <fieldset>
+                <legend>Nombre del artista</legend>
+                <input type="text" name="nombre" id="nombre">
+            </fieldset>
+            <fieldset>
+                <legend>Apellido del artista</legend>
+                <input type="text" name="apellido" id="apellido">
+            </fieldset>
+            <fieldset>
+                <legend>Genero del artista</legend>
+                <input type="text" name="genero" id="genero">
+            </fieldset>
+            <a  href="/artistas">volver al listado</a>
+            <p> <button type="submit">Agregar Nuevo artista</button>
+            
+                
+        </form>
+    </section>
+    
+</body>
+
+</html>

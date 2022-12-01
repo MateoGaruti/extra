@@ -3,18 +3,37 @@ const sequelize = db.sequelize;
 
 
 const artistasController = {
-    "lista": (req, res) => {
+    lista: (req, res) => {
         db.Artista.findAll()
             .then(artistas => {
                 res.render("listado.ejs", {artistas})
             })
     },
-    "detalle": (req, res) => {
+    detalle: (req, res) => {
         db.Artista.findByPk(req.params.id)
             .then(artistas => {
                 res.render("artistasDetalle.ejs", {artistas});
             });
-    }
+    },
+    add: (req, res) => {
+        res.render("artistasNuevo")
+
+    },
+    create: (req, res) =>{ //el add me va a mostar el formualario que crea el el artista nuevo
+        const save = db.Artista.create({
+            
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+        })
+        const exito = data => res.redirect ("/artistas")
+        const error = error => console.log (error)
+        
+        return save.then(exito).catch(error)
+    }                        
+        
+
+
+
 
 }
 

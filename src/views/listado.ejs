@@ -14,11 +14,14 @@
     <ul>
         <% for( let i = 0; i < artistas.length; i++ ) { %>
         <li>
-            <a href="/artistas/detalle/<%= artistas[i].id %>"><%= artistas[i].nombre %></a>
+            <a href="/artistas/detalle/<%= artistas[i].id %>"><%= artistas[i].nombre %>  <%= artistas[i].apellido %></a>
         </li>
+        
         <% } %>
-
+        
     </ul>
+    
+    <a  href="/artistas/crear/">Agrega a tiu artista favorito</a>
 </body>
 
 </html>

@@ -6,10 +6,13 @@
     <title><%= artistas.nombre %> </title>
 </head>
 <body>    
-    <h1><%= artistas.nombre %> </h1>
+    <h1><%= artistas.nombre %> <%= artistas.apellido %></h1>
     <br>
-    <p>nombre: <%= artistas.nombre %> </p>
-    <p>apellido: <%= artistas.apellido %> </p>
+    <p>genero: <%=artistas.genero %> </p>
+    <a  href="/artistas">volver al listado</a>
+    
+    <p> <button type="submit">editar Artista</button></p>
+    <p><button type="submit">eliminar artista</button></p>
 
 </body>
 </html>
