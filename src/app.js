@@ -1,6 +1,5 @@
 const express = require("express"); 
 const server = express();
-
 const path = require("path");
 const cors = require('cors')
 const port = process.env.PORT || 3000     
@@ -10,46 +9,25 @@ const session = require('express-session');
 server.listen(port,start())
 
 
-/*
-const statics = require("./modules/static")
-server.use(statics(join(__dirname,"../public")))
-*/
 
-
-
-
-// middleware
+//URLencode({}) Para que me pueda llegar la información desde el formulario al req.body
 server.use(cors())
-server.use (express.urlencoded({extended:true}));
+server.use (express.urlencoded({extended:false}));
 
 
-// Routes
+// RUTAS
+const artistasRoutes = require('./routes/artistasRoutes');
+//const cancionesRoutes = require('./routes/moviesRoutes');
+const indexRouter = require('./routes/index');
 
-server.use (require("./routes/index"))//muestra el texto spluty
-server.use (require("./routes/artistasRoutes")) //Por le momento muestra el LISTADO de usuarios y funciona bien //tendria que ver el ejs
-server.use (require("./routes/cancionesRoutes"))
+
+server.use('/', indexRouter);
+server.use(artistasRoutes);
+//server.use(cancionesRoutes);
 
 
-const artistasApiRoutes = require("./routes/artistasApiRoutes")
-server.use("/api", artistasApiRoutes)
 
 
 // view engines
 server.set ("views", path.resolve(__dirname, "./views"));
 server.set ("view engine","ejs");
-
-
-
-
-
-
-
-
-
-
-
-/*const public = path.join(__dirname,"../public")
-const static =  express.static(public)
-server.use(static)*/
-
-

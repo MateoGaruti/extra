@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>listado de artistas</title>
+    
 
-    <% if (artistas.length > 0) { %> <!--SI la cantidad de artistas guardas en el json en mayor a 0 se muestra, en caso contrario no -->
-     
-        <ul>
-            <% artistas.forEach(element => { %>
-               <%- include ("./partials/artistasPartial.ejs",{element:element}) %><!--CONTIENE A LOS ARTISTAS EN UN PARTIAL-->
-            <% }) %>
-        </ul>
-        <% } else { %>
-         <h2>no hay artista seleccionado</h2>
-    <% } %>
-    <nav>
-        <a href="/artistas/nuevo" >Agregar nuevo artista</a>
-    </nav>
+</head>
+
+<body>
+    <h1>LISTADO DE ARTISTAS</h1>
+    <ul>
+        <% for( let i = 0; i < artistas.length; i++ ) { %>
+        <li>
+            <a href="/artistas/detalle/<%= artistas[i].id %>"><%= artistas[i].nombre %></a>
+        </li>
+        <% } %>
+
+    </ul>
 </body>
+
 </html>
