@@ -11,10 +11,10 @@
 <body>
     <% if (artista) { %> 
             <article>
-                <h2><%= artista.name %><span>nombre <%=artista.apellido%></span></h2>
+                <h2><%= artista.nombre %> <%=artista.apellido%></h2>
             </article>
             <nav>
-                <a href="artista <%=artista.genero%>"><%=artista.genero%></a>
+                <a><%=artista.genero%></a>
             </nav>
         <% } else { %>
          <h2>no hay artista seleccionado</h2>

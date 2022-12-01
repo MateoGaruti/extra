@@ -5,20 +5,19 @@ const controller = {
     index: (req, res) =>{
         let artistas = all()
         
-        if (req.params.artistas){//si dentro de "req.params" exsiten los artistas. Me llaga como parameto un artista
-            artistas = artistas.filter (e => e.artistas == req.params.artistas)
+        if (req.params.genero){//si dentro de "req.params" exsiten los artistas. Me llaga como parameto un artista
+            artistas = artistas.filter (e => e.generos == req.params.genero)
             return res.render ("listado",{artistas}) //FUNCIONA BIEN
         }
         return res.render ("listado",{artistas}) //FUNCIONA BIEN
     },
-        //INDEX FUNCIONA BIEN 
-     
+        
     show: (req, res) =>{
         let artista = one(req.params.artista)
         if (artista){
-            return res.render ("detalle",{artista})
+            return res.render ("detalle",{artista})//FUNCIONA BIEN
         }
-          return res.render ("detalle",{artista:null})
+          return res.render ("detalle",{artista:null})//FUNCIONA BIEN
     },    
 
     

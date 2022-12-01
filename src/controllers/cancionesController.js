@@ -18,7 +18,7 @@ const controller = {
         if (cancion){
             return res.render (canciones)        
         }
-        return res.send ("no hay artista con dicho nombre") 
+        return res.send ("no hay cancion con dicho nombre") 
 
     }
 }

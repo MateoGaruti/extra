@@ -9,7 +9,7 @@ route.post ("/artistas/guardar",controller.save)// guardar al artista nuevo en e
 
 
 route.get ("/artistas",controller.index)//muestra el listado de artistas creados y guardados en el JSON // FUNCIONA BIEN 
-route.get ("/artistas/detalle/:artista",controller.show)//MOSTRARIA LOS DETALLES PERO NO LO HACE //SOLUCIONAR
+route.get ("/artistas/detalle/:artista",controller.show)//MUESTRA EL DETALLE DE LOS ARTISTAS // FUNCIONA BIEN 
 
 //route.get ("/artistas/genero?",controller.show)//genero
 //route.get ("/artistas/detalle/:nombre",controller.show)
