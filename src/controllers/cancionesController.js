@@ -4,18 +4,32 @@ const sequelize = db.sequelize;
 
 const cancionesController = {
     lista: (req, res) => {
-        db.Artista.findAll()
-            .then(artistas => {
-                res.render("listado.ejs", {artistas})
+        db.Canciones.findAll()
+            .then(canciones => {
+                res.render("cancionesListado.ejs", {canciones})
             })
     },
     detalle: (req, res) => {
-        db.Artista.findByPk(req.params.id)
-            .then(artistas => {
-                res.render("artistasDetalle.ejs", {artistas});
+        db.Canciones.findByPk(req.params.id)
+            .then(canciones => {
+                res.render("cancionesDetalle.ejs", {canciones});
             });
     },
+    add: (req, res) => {
+        res.render("cancionesNuevo")
 
+    },
+    create: (req, res) =>{ //el add me va a mostar el formualario que crea el el Canciones nuevo
+        const save = db.Canciones.create({
+            
+            titulo: req.body.titulo,
+            duracion: req.body.duracion,
+        })
+        const exito = data => res.redirect ("/canciones")
+        const error = error => console.log (error)
+        
+        return save.then(exito).catch(error)
+    }                        
 }
 
 module.exports = cancionesController;

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listado de canciones</title>
+</head>
+<body>
+    <h1>LISTADO DE CANCIONES</h1>
+    <ul>
+        <% for( let i = 0; i < canciones.length; i++ ) { %>
+        <li>
+            <a href="/canciones/detalle/<%= canciones[i].id %>"><%= canciones[i].titulo %>  <%= canciones[i].duracion %></a>
+        </li>
+        
+        <% } %>
+        
+    </ul>
+    
+    <a  href="/canciones/crear/">Agrega a tiu artista favorito</a>
+</body>
+
+</html>

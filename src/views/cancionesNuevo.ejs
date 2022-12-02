@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>argregar cancion</title>
+    
+</head>
+
+<body>
+    <h1 class="titulo">Agregar canciones</h1>
+        <form action="/canciones/crear" method="POST">
+            <fieldset>
+                <legend>Nombre de la cancion</legend>
+                <input type="text" name="titulo" id="titulo">
+            </fieldset>
+            <fieldset>
+                <legend>Duracion de la cancion</legend>
+                <input type="text" name="duracion" id="duracion">
+            </fieldset>
+            <fieldset>
+                <legend>Genero del canciones</legend>
+                <input type="text" name="genero" id="genero">
+            </fieldset>
+            <a  href="/canciones">volver al listado</a>
+            <p> <button type="submit">Agregar Nuevo canciones</button>
+            
+                
+        </form>
+    </section>
+    
+</body>
+
+</html>

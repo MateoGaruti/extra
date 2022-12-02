@@ -1,11 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Canciones';
     let cols = {
-        id: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
+
         titulo: {
             type: dataTypes.STRING
         },
@@ -14,10 +10,10 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: 'artistas',
+        tableName: 'canciones',
         timestamps: false
     };
-    const artistas = sequelize.define(alias, cols, config)
+    const canciones = sequelize.define(alias, cols, config)
 
-    return artistas
+    return canciones
 }

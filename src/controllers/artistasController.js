@@ -30,11 +30,6 @@ const artistasController = {
         
         return save.then(exito).catch(error)
     }                        
-        
-
-
-
-
 }
 
 module.exports = artistasController;
