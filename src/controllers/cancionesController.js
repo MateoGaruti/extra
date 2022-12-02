@@ -22,17 +22,22 @@ const cancionesController = {
     create: (req, res) =>{ //el add me va a mostar el formualario que crea el el Canciones nuevo
         const save = db.Cancion.create({
             
-            titulo: req.body.titulo,
+            titulo: req.body.titulo, //canciones
             duracion: req.body.duracion,
         })
-        const saves = db.Genero.create({ //agrega el genero a la base de datos.  
-            name: req.body.genero, 
+        saves = db.Genero.create({ //agrega el Genero   
+            name: req.body.name, 
+        })
+        saves = db.Artista.create({ //funciona artistas
+            nombre: req.body.nombre,
+            apellido:req.body.apellido,
+
         })
         const exito = data => res.redirect ("/canciones")
         const error = error => console.log (error)
-        
         return save.then(exito).catch(error)
         return saves.then(exito).catch(error)
+        
     }                        
 }
 

@@ -40,22 +40,22 @@ module.exports = (sequelize, dataTypes) => {
     const Cancion = sequelize.define(alias, cols, config)
     
 
-    Cancion.associate = function(models){
+    /*Cancion.associate = function(models){
         
-        /*Cancion.belongsToMany(models.genero_id, {
-            as: "generos",//con la que me quiero relacionar
-            through: "genero",
+        Cancion.belongsTo(models.Artista, {
+            as: "artistas",//con la que me quiero relacionar
             foreignKey:"canciones",
+            through: "genero",
             otherKey:"album",
             timestamps:false
-        });*/
+        });
 
         /*Cancion.belongsTo(models.Artista, {
             as: "category",
             foreignKey: "category_id",
             timestamps:false
-        });*/
-    }
+        });
+    }*/
 
 
     return Cancion
