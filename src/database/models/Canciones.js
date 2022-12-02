@@ -1,16 +1,33 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Canciones';
+    let alias = 'Cancion';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement:true 
+            autoIncrement:true,
+            primaryKey: true
         },
-
-        titulo: {
+        titulo:{
             type: dataTypes.STRING
         },
         duracion: {
+            type: dataTypes.INTEGER
+        },
+   
+        created_at:{
+            type: dataTypes.DATE,
+            allowNull:true
+        },
+        updated_at:{
+            type: dataTypes.DATE,
+            allowNull:true
+        },
+        genero_id:{
+            type: dataTypes.INTEGER
+        },
+        album_id:{
+            type: dataTypes.INTEGER
+        },
+        artista_id:{
             type: dataTypes.INTEGER
         }
         
@@ -18,8 +35,28 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: 'canciones',
         timestamps: false
+        
     };
-    const canciones = sequelize.define(alias, cols, config)
+    const Cancion = sequelize.define(alias, cols, config)
+    
 
-    return canciones
+    Cancion.associate = function(models){
+        
+        /*Cancion.belongsToMany(models.genero_id, {
+            as: "generos",//con la que me quiero relacionar
+            through: "genero",
+            foreignKey:"canciones",
+            otherKey:"album",
+            timestamps:false
+        });*/
+
+        /*Cancion.belongsTo(models.Artista, {
+            as: "category",
+            foreignKey: "category_id",
+            timestamps:false
+        });*/
+    }
+
+
+    return Cancion
 }

@@ -25,10 +25,14 @@ const artistasController = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
         })
+        const saves = db.Genero.create({ //agrega el genero a la base de datos.  
+            name: req.body.genero, 
+        })
         const exito = data => res.redirect ("/artistas")
         const error = error => console.log (error)
         
         return save.then(exito).catch(error)
+        return saves.then(exito).catch(error)
     }                        
 }
 

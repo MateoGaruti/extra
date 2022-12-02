@@ -11,13 +11,15 @@
     <ul>
         <% for( let i = 0; i < canciones.length; i++ ) { %>
         <li>
-            <a href="/canciones/detalle/<%= canciones[i].id %>"><%= canciones[i].titulo %>  <%= canciones[i].duracion %></a>
+            <a href="/canciones/detalle/<%= canciones[i].id %>"><%= canciones[i].titulo %>  </a>
+            
         </li>
         
         <% } %>
-        
+
     </ul>
-    
+    <a  href="/">volver a la pagina principal</a>
+    <br>
     <a  href="/canciones/crear/">Agrega a tiu artista favorito</a>
 </body>
 

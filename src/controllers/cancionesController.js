@@ -4,13 +4,13 @@ const sequelize = db.sequelize;
 
 const cancionesController = {
     lista: (req, res) => {
-        db.Canciones.findAll()
+        db.Cancion.findAll()
             .then(canciones => {
                 res.render("cancionesListado.ejs", {canciones})
             })
     },
     detalle: (req, res) => {
-        db.Canciones.findByPk(req.params.id)
+        db.Cancion.findByPk(req.params.id)
             .then(canciones => {
                 res.render("cancionesDetalle.ejs", {canciones});
             });
@@ -20,15 +20,19 @@ const cancionesController = {
 
     },
     create: (req, res) =>{ //el add me va a mostar el formualario que crea el el Canciones nuevo
-        const save = db.Canciones.create({
+        const save = db.Cancion.create({
             
             titulo: req.body.titulo,
             duracion: req.body.duracion,
+        })
+        const saves = db.Genero.create({ //agrega el genero a la base de datos.  
+            name: req.body.genero, 
         })
         const exito = data => res.redirect ("/canciones")
         const error = error => console.log (error)
         
         return save.then(exito).catch(error)
+        return saves.then(exito).catch(error)
     }                        
 }
 

@@ -1,6 +1,11 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Artista';
     let cols = {
+        id: {
+            type: dataTypes.INTEGER,
+            autoIncrement:true,
+            primaryKey: true
+        },
         nombre: {
             type: dataTypes.STRING
         },
@@ -12,7 +17,14 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'artistas',
         timestamps: false
     };
-    const artistas = sequelize.define(alias, cols, config)
-
-    return artistas
+    const Artista = sequelize.define(alias, cols, config)
+    //asociacion
+    /*Artista.associate = function (models){ 
+        Artista.belongsTo(models.Genero,{ //  busca el id dentro del modelo de genero
+            as:"generos",
+            foreignKey:"genero_id",//la foreignKey va a buscar el id dentro del artista 
+            //otherkey: ""
+        }) 
+    }*/
+    return Artista
 }
