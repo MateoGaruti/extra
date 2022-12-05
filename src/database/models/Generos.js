@@ -1,8 +1,13 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Genero";
     let cols = {
+        id: {
+            type: dataTypes.INTEGER,
+            autoIncrement:true,
+            primaryKey: true
+        },
         name: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
         },
 
     };

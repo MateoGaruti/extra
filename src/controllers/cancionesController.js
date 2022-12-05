@@ -28,7 +28,7 @@ const cancionesController = {
             album_id: req.body.album,
             artista_id: req.body.artista
         })
-
+            // no es la mejor manera de hacerlo pero sirve
         db.Artista.create({ //funciona artistas
             nombre: req.body.nombre,
             apellido:req.body.apellido,

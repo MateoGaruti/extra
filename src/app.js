@@ -18,13 +18,14 @@ server.use (express.urlencoded({extended:false}));
 // RUTAS
 const artistasRoutes = require('./routes/artistasRoutes');
 const cancionesRoutes = require('./routes/cancionesRoutes');
+const generosRoutes = require('./routes/generosRoutes');
 const indexRouter = require('./routes/index');
 
 
 server.use('/', indexRouter);
 server.use(artistasRoutes);
 server.use(cancionesRoutes);
-
+server.use(generosRoutes);
 
 
 

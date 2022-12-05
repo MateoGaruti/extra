@@ -30,7 +30,6 @@ const artistasController = {
         const error = error => console.log (error)
         return save.then(exito).catch(error)
         
-
         
     }                        
 }

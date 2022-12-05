@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listado de generos</title>
+</head>
+<body>
+    <h1>LISTADO DE GENEROS</h1>
+    <ul>
+        <% for( let i = 0; i < generos.length; i++ ) { %>
+        <li>
+            <a href="/generos/detalle/<%= generos[i].id %>"><%= generos[i].titulo %>  </a>
+            
+        </li>
+        
+        <% } %>
+
+    </ul>
+    <a  href="/">volver a la pagina principal</a>
+    <br>
+    <a  href="/generos/crear/">Agrega a tu genero</a>
+</body>
+
+</html>
