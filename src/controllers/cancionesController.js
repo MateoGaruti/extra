@@ -10,10 +10,9 @@ const { Op } = require("sequelize");
 
 const cancionesController = {
     lista: (req, res) => {
-        let search = req.query && req.query.search ? req.query.search : "" 
         db.Cancion.findAll({})
         .then(function(canciones){ 
-            return res.render("cancionesListado.ejs", {canciones, search})
+            return res.render("cancionesListado.ejs", {canciones})
         })
         .catch(error => res.send(error))
     },
@@ -22,7 +21,7 @@ const cancionesController = {
     
     detalle: (req, res) => {
         let search = req.query && req.query.search ? req.query.search : "" 
-        db.Cancion.findAll({
+        db.Cancion.findOne({
             include: [{association: "artistas"}],
             where:{
                 titulo: {
@@ -31,7 +30,7 @@ const cancionesController = {
             } 
         }) 
         .then(function(canciones){ 
-            return res.render("cancionesDetalle.ejs", { canciones, search})
+            return res.render("cancionesDetalle.ejs", {canciones})
         })
         .catch(error => res.send(error))
     },
