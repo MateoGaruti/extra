@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>listado de artistas</title>
+    <title>listado de albunm</title>
     
 
 </head>
 
 <body>
-    <h1>LISTADO DE ARTISTAS</h1>
+    <h1>LISTADO DE ALBUNMES</h1>
     <ul>
-        <% for( let i = 0; i < artistas.length; i++ ) { %>
+        <% for( let i = 0; i < albumes.length; i++ ) { %>
         <li>
-            <a <%= artistas[i].id %>><%= artistas[i].nombre %>  <%= artistas[i].apellido %></a>
+            <a href="/artistas/detalle/<%= albumes[i].id %>"><%= albumes[i].nombre %>  <%= albumes[i].duracion %></a>
         </li>
         
         <% } %>
@@ -22,7 +22,7 @@
     </ul>
     <a  href="/">volver a la pagina principal</a>
     <br>
-    <a  href="/artistas/crear/">Agrega a tiu artista favorito</a>
+    <a  href="/albumes/crear/">Agrega a tu album</a>
 </body>
 
 </html>

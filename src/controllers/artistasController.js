@@ -26,7 +26,7 @@ const artistasController = {
             apellido: req.body.apellido,
         })
         
-        const exito = data => res.redirect ("/artistas")
+        const exito = data => res.redirect ("/generos/crear")
         const error = error => console.log (error)
         return save.then(exito).catch(error)
         

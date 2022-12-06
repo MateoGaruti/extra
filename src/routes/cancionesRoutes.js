@@ -7,9 +7,7 @@ router.get("/canciones/detalle/:id", cancionesController.detalle);
 router.post("/canciones/crear",cancionesController.create);
 router.get("/canciones/crear",cancionesController.add);
 
-//nuevo probando
-router.post("/artistas/crear",cancionesController.create);
-router.get("/artistas/crear",cancionesController.add);
+
 
 
 module.exports = router;

@@ -9,11 +9,15 @@
     <h1><%= canciones.titulo %> </h1>
     
     <h4><span>duracion: </span><%= canciones.duracion%><span>min</span></h4>
-    <p> genero: <%=canciones.genero %> </p>
+    <p> genero: <%=canciones.genero_id %> </p>
+
     <a  href="/canciones">volver al listado</a>
-    
+
     <p> <button type="submit">editar cancion</button></p>
     <p> <button type="submit">eliminar cancion</button></p>
 
 </body>
+    <main>
+        <h1>artista: <%= canciones.artista_id %> </h1>
+    </main>
 </html>

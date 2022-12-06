@@ -24,7 +24,7 @@ const generosController = {
             name: req.body.nombre
         })
         
-        const exito = data => res.redirect ("/generos")
+        const exito = data => res.redirect ("/albumes/crear")
         const error = error => console.log (error)
         return save.then(exito).catch(error)
         

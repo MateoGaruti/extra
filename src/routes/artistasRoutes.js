@@ -9,10 +9,12 @@ router.get("/artistas", artistasController.lista);
 router.get("/artistas/detalle/:id", artistasController.detalle);
 router.get("/artistas/editar",artistasController.update);
 
-router.get("/artistas/editar/:id",artistasController.editar)
+router.get("/artistas/editar/:id",artistasController.editar)//falta
+
+
 router.post("/artistas/crear",artistasController.create);
 router.get("/artistas/crear",artistasController.add);
-router.post("/artistas/:id",artistasController.destroy);
+router.post("/artistas/:id",artistasController.destroy);//falta
 
 
 module.exports = router;

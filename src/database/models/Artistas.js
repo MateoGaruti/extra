@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
         Artista.hasMany(models.Cancion,{ //  busca el id dentro del modelo de canciones
             as:"canciones",
             foreignKey:"artista_id",//la foreignKey va a buscar el id dentro del artista 
-            //otherkey: "id"
+            otherkey: "id"
         }) 
     }
     return Artista
