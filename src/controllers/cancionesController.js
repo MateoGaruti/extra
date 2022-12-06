@@ -12,12 +12,7 @@ const cancionesController = {
     lista: (req, res) => {
         let search = req.query && req.query.search ? req.query.search : "" 
         db.Cancion.findAll({
-            include: [{association: 'artistas'}],
-            where:{
-                name: {
-                    [Op.like]: "%" + search + "%"
-                }
-            } 
+            
         })
         .then(function(canciones){ 
             return res.render("cancionesListado.ejs", {canciones, search})
