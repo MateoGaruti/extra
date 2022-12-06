@@ -22,13 +22,19 @@ module.exports = (sequelize, dataTypes) => {
             allowNull:true
         },
         genero_id:{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: true,
+            defaultValue: 1,
         },
         album_id:{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: true,
+            defaultValue: 1,
         },
         artista_id:{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: true,
+            defaultValue: 1,
         }
         
     };
@@ -40,23 +46,30 @@ module.exports = (sequelize, dataTypes) => {
     const Cancion = sequelize.define(alias, cols, config)
     
 
-    /*Cancion.associate = function(models){
-        
-        Cancion.belongsTo(models.Artista, {
-            as: "artistas",//con la que me quiero relacionar
-            foreignKey:"canciones",
-            through: "genero",
-            otherKey:"album",
-            timestamps:false
+    Cancion.associate = function(models){
+        //genero
+        Cancion.belongsTo(models.Genero, {
+            as:"Genero",
+            foreignKey:"genero_id",
+            otherKey:"id",
         });
-
-        /*Cancion.belongsTo(models.Artista, {
-            as: "category",
-            foreignKey: "category_id",
-            timestamps:false
+        //albumes
+        Cancion.belongsTo(models.Albumes, {
+            as: "Albumes",
+            foreignKey: "album_id",
+            otherKey: "id",
         });
-    }*/
+         //artistas
+         Cancion.belongsTo(models.Artista, {
+            as: "Artista",
+                foreignKey: "artista_id",
+                otherKey: "id"
+            });
+    }
 
 
     return Cancion
 }
+
+
+

@@ -34,8 +34,11 @@ const artistasController = {
     },  
     // para abajo nuevo
     editar: (req, res) => {
-        let artista = (req.params.artistas)
-        res.render("artistas/edit",{ artista });
+        db.Artista.findByPk (req.params.id)
+        .then (function (artistas) {
+            return res,render ("artistas/edit",{ artistas })
+            })
+            .catch(error => res.send(error))
     },
     update: (req, res) => {
         db.Artista.findByPk(req.params.id)
@@ -51,22 +54,13 @@ const artistasController = {
             .catch(error => res.send(error))
     },
     destroy: (req, res) => {
-        console.log(req.params.id);
-        db.Artista.destroy({
-            where: {
+        db.Artistas.destroy ({
+            where:{
                 id: req.params.id
             }
-        }).then((artistas) => {
-            console.log(artistas);
-            delete req.session.artistas;
-            return res.redirect('/');
-        }).catch(error => res.send(error))
-         
+        })
     },
-    perro: (req, res) => {
-        res.render ("moviesEdit")
-    }
-
+   
 }
 
 module.exports = artistasController;

@@ -11,9 +11,12 @@
     <p>genero: <%=artistas.genero %> </p>
     <a  href="/artistas">volver al listado</a>
     
-
-    <p> <button type="submit">editar Artista</button></p>
-    <p><button type="submit">eliminar artista</button></p>
+    <nav>
+        <button><a href="/artistas/editar/<%= artistas.id %>">Editar</a></button>
+    </nav>
+    <form method="POST" action="/artistas/eliminar/<%= artistas.id %>?m=DELETE" >
+        <button type="submit">Eliminar</button>
+    </form>
 
 </body>
 </html>
