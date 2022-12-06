@@ -21,7 +21,7 @@ const generosController = {
     },
     create: (req, res) =>{ //el add me va a mostar el formualario que crea el el artista nuevo
         const save = db.Genero.create({
-            nombre: req.body.name
+            name: req.body.nombre
         })
         
         const exito = data => res.redirect ("/generos")

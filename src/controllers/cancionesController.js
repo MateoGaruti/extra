@@ -1,6 +1,5 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
-const { validationResult } = require("express-validator");
 
 const cancionesController = {
     lista: (req, res) => {
@@ -23,22 +22,14 @@ const cancionesController = {
         const save = db.Cancion.create({
                 
             titulo: req.body.titulo, //canciones no funciona
-            duracion: req.body.duracion,
-            genero_id: req.body.genero,
-            album_id: req.body.album,
-            artista_id: req.body.artista
+            duracion: req.body.duracion
         })
-            // no es la mejor manera de hacerlo pero sirve
-        db.Artista.create({ //funciona artistas
-            nombre: req.body.nombre,
-            apellido:req.body.apellido,
-
-        })
+      
         const exito = data => res.redirect ("/canciones")
         const error = error => console.log (error)
         return save.then(exito).catch(error)
 
-    }                        
+    },                        
 }
 
 module.exports = cancionesController;

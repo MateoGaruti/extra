@@ -20,13 +20,13 @@ const artistasRoutes = require('./routes/artistasRoutes');
 const cancionesRoutes = require('./routes/cancionesRoutes');
 const generosRoutes = require('./routes/generosRoutes');
 const indexRouter = require('./routes/index');
-
+//const artistasRoutesD = require('./routes/artistasRoutesD');
 
 server.use('/', indexRouter);
 server.use(artistasRoutes);
 server.use(cancionesRoutes);
 server.use(generosRoutes);
-
+//server.use(artistasRoutesD);
 
 
 // view engines
