@@ -42,13 +42,11 @@ const cancionesController = {
 
     },
     editar: (req, res) => {
-        try {
-            //let canciones =  db.Cancion.findAll()
-            let canciones = db.Cancion.findByPk(req.params.id)
-            return res.render('cancionesEditar',{ canciones});
-        } catch (error) {
-            res.send(error)
-        }
+        db.Cancion.findByPk(req.params.id)
+        .then(function (canciones){
+            return res.render('cancionesEditar',{canciones});
+        })
+        .catch(error => res.send(error))
     },
     
     

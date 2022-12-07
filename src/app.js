@@ -10,6 +10,9 @@ server.listen(port,start())
 
 
 
+const methodOverride = require('method-override');
+server.use(methodOverride("m"));
+
 //URLencode({}) Para que me pueda llegar la información desde el formulario al req.body
 server.use(cors())
 server.use (express.urlencoded({extended:false}));
