@@ -77,7 +77,7 @@ const cancionesController = {
         }).then((canciones) => {
             console.log(canciones);
             delete req.session.canciones;
-            return res.redirect('/');
+            return res.redirect("/canciones");
         }).catch(error => res.send(error))
         
     },                        
