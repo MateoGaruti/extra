@@ -16,7 +16,10 @@
     <nav>
         <button><a href="/canciones/editar/<%= canciones.id %>">Editar</a></button>
     </nav>
-    <p> <button type="submit">eliminar cancion</button></p>
+    <form method="POST" action="/canciones/eliminar/<%=canciones.id%>?m=DELETE">
+        <button type="submit">Eliminar</button>
+    </form>    
+    
 
 </body>
     <main>

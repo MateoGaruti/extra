@@ -31,7 +31,6 @@ const cancionesController = {
     },
     create: (req, res) =>{ //el add me va a mostar el formualario que crea el el Canciones nuevo
         const save = db.Cancion.create({
-                
             titulo: req.body.titulo, 
             duracion: req.body.duracion
         })
@@ -44,7 +43,7 @@ const cancionesController = {
     editar: (req, res) => {
         db.Cancion.findByPk(req.params.id)
         .then(function (canciones){
-            return res.render('cancionesEditar',{canciones});
+            return res.render("cancionesEditar",{canciones});
         })
         .catch(error => res.send(error))
     },
@@ -63,7 +62,7 @@ const cancionesController = {
                 where: {id: req.params.id}
             })
              canciones.addArtista(req.body.artistas)
-            return res.redirect('/canciones' + req.params.id)
+            return res.redirect("/canciones" + req.params.id)
         } catch (error) {
             res.send(error)
         }
@@ -78,8 +77,9 @@ const cancionesController = {
         }).then((canciones) => {
             console.log(canciones);
             delete req.session.canciones;
-            return res.redirect("/canciones");
+            return res.redirect('/');
         }).catch(error => res.send(error))
+        
     },                        
 }
 
