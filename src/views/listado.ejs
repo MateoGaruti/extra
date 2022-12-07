@@ -14,7 +14,7 @@
     <ul>
         <% for( let i = 0; i < artistas.length; i++ ) { %>
         <li>
-            <a href="/artistas/detalle/" <%= artistas[i].id %>><%= artistas[i].nombre %>  <%= artistas[i].apellido %></a>
+            <a <%= artistas[i].id %>><%= artistas[i].nombre %>  <%= artistas[i].apellido %></a>
         </li>
         
         <% } %>

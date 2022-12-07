@@ -7,16 +7,16 @@
     <main>        
          <div>
             <form action="/artistas/update/<%= artistas.id %>?m=PUT" method="POST" enctype="multipart/form-data">
-                    <p> Modificar Artista </p>
-                    <label for="nombreArtista"></label>
-                    <input type="text" id="nombreArtista" name="nombre" value="<%=artistas.nombre%>"><br>
+                <p> Modificar Artista </p>
+                <label for="nombreArtista"></label>
+                <input type="text" id="nombreArtista" name="nombre" value="<%=artistas.nombre%>"><br>
 
-                    <label for="apellidoArtista"></label>
-                    <input type="text" id="apellidoArtista" name="apellido" value="<%=artistas.apellido%>"><br>
+                <label for="apellidoArtista"></label>
+                <input type="text" id="apellidoArtista" name="apellido" value="<%=artistas.apellido%>"><br>
 
-                    <div>
-                        <button type="submit" class="botonArtista">Guardar</button><br>
-                    </div>
+                <div>
+                    <button type="submit" class="botonArtista">Guardar</button><br>
+                </div>
             </form>
             <form method="POST" action="/artistas/borrar/<%=artistas.id%>?m=DELETE">
                 <button type="submit">Eliminar</button>
