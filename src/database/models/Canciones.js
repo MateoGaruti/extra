@@ -24,17 +24,15 @@ module.exports = (sequelize, dataTypes) => {
         genero_id:{
             type: dataTypes.INTEGER,
             allowNull: true,
-            defaultValue: 1,
         },
         album_id:{
             type: dataTypes.INTEGER,
             allowNull: true,
-            defaultValue: 1,
         },
         artista_id:{
             type: dataTypes.INTEGER,
             allowNull: true,
-            defaultValue: 1,
+
         }
         
     };

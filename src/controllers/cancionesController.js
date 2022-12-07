@@ -49,11 +49,12 @@ const cancionesController = {
     },
     
     
+    
     update: async (req, res) => {
         try {
-            let cancion =  await db.Cancion.findByPk(req.params.id)
+            await db.Cancion.findByPk(req.params.id)
             await db.Cancion.update({
-                titulo: req.body.titulo,
+                nombre: req.body.titulo,
                 duracion: req.body.duracion,
                 artista_id: req.body.artistas_id,
                 album_id: req.body.nombre,
@@ -61,7 +62,7 @@ const cancionesController = {
             }, {
                 where: {id: req.params.id}
             })
-            return res.redirect("/canciones/detalle" + req.params.id)
+            return res.redirect("/canciones")
         } catch (error) {
             res.send(error)
         }

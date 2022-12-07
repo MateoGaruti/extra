@@ -6,35 +6,34 @@
             <div>
                 <form  action="/canciones/editar/<%= canciones.id %>?m=PUT" method="POST"  enctype="multipart/form-data">
 
-                    <p> Modificar Cancion </p>   <!--DESPUES BORRAR TODAS LAS P-->
                     <input type="hidden" name="id" value="<%= canciones.id %> ">
                     <div>
-                        <p>titulo</p><!--DESPUES BORRAR TODAS LAS P-->
+                        <p>titulo</p>
                         <label for="titulo-cancion"></label>
-                        <input type="text" id="titulo-cancion" name="titulo" value="<%= canciones.titulo %> " >
+                        <p></p><input type="text" id="titulo-cancion" name="titulo-cancion" value="<%= canciones.titulo %> " >
                     </div>
                     <div>
-                        <p>duracion</p><!--DESPUES BORRAR TODAS LAS P-->
+                        <p>duracion</p>
                         <label for="duracion"></label>
                         <input type="text" id="duracion" name="duracion" value="<%= canciones.duracion %>" >
                     </div>
                     <div>
-                        <p>id del genero</p><!--DESPUES BORRAR TODAS LAS P-->
+                        <p>genero_id</p>
                         <label for="genero_id"></label>
                         <select type="text" id="genero_id" name="genero_id" value="<%= canciones.genero_id %>">
                     </div>
                     <div>
-                        <p>id del almub</p><!--DESPUES BORRAR TODAS LAS P-->
+                        <p>album_id</p>
                         <label  for="album_id"></label>
                         <input type="text" id="album_id" name="album_id" value="<%= canciones.album_id %>" >
                     </div>
                     <div>
-                        <p>id del artistas_id</p>
+                        <p>artista_id</p>
                         <label  for="artistas_id"></label>
                         <input type="text" id="artistas_id" name="artistas_id" value="<%= canciones.artistas_id %>" >
                     </div>
                     <div>
-                        <button class="boton" type="submit">GUARDAR</button>
+                        <button type="submit">GUARDAR</button>
                     </div>
                 </form>
             </div>
