@@ -15,20 +15,11 @@ const cancionesController = {
             return res.render("cancionesListado.ejs", {canciones})
         })
         .catch(error => res.send(error))
-    },
-    // detalle
-
-    
+    },  
     detalle: (req, res) => {
-        let search = req.query && req.query.search ? req.query.search : "" 
-        db.Cancion.findOne({
-            include: [{association: "artistas"}],
-            where:{
-                titulo: {
-                    [Op.like]: "%" + search + "%"
-                }
-            } 
-        }) 
+        db.Cancion.findByPk(
+            req.params.id 
+        ) 
         .then(function(canciones){ 
             return res.render("cancionesDetalle.ejs", {canciones})
         })
@@ -50,18 +41,35 @@ const cancionesController = {
         return save.then(exito).catch(error)
 
     },
+    editar: (req, res) => {
+        try {
+            //let canciones =  db.Cancion.findAll()
+            let canciones = db.Cancion.findByPk(req.params.id)
+            return res.render('cancionesEditar',{ canciones});
+        } catch (error) {
+            res.send(error)
+        }
+    },
+    
+    
     update: (req, res) => {
-        db.Cancion.findByPk(req.params.id)
-            .then(canciones => {
-                return db.Cancion.update({
-                    titulo: req.body.titulo,
-                    duracion: req.body.duracion,
-                },{
-                    where: { id: req.params.id }
-                })
+             try {
+            let canciones =  db.Cancion.findByPk(req.params.id)
+             db.canciones.update({
+                titulo: req.body.titulo,
+                duraicon: req.body.duracion,
+                artista_id:req.body.artistas,
+                album_id: req.body.nombre,
+                genero_id: req.body.name,
+            }, {
+                where: {id: req.params.id}
             })
-            .then(() => res.redirect("/canciones" + req.params.id))
-            .catch(error => res.send(error))
+             canciones.addArtista(req.body.artistas)
+            return res.redirect('/canciones' + req.params.id)
+        } catch (error) {
+            res.send(error)
+        }
+
     },
     destroy: (req, res) => {
         console.log(req.params.id);

@@ -32,7 +32,6 @@ const artistasController = {
         
         
     },  
-    // para abajo nuevo
     editar: (req, res) => {
         db.Artista.findByPk (req.params.id)
         .then (function (artistas) {
